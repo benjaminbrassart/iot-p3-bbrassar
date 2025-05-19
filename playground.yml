@@ -29,19 +29,3 @@ spec:
           image: wil42/playground:v2
           ports:
             - containerPort: 8888
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: p3
-spec:
-  rules:
-    - http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: playground
-                port:
-                  number: 8888
